@@ -1,0 +1,21 @@
+{
+  "name": "douban-trailer",
+  "version": "1.0.0",
+  "main": "server/index.ts",
+  "repository": "https://github.com/B1anker/douban-trailer.git",
+  "author": "B1anker <b1anker@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run server:live",
+    "server:live": "nodemon --exec ./node_modules/.bin/ts-node -- server/index.ts"
+  },
+  "dependencies": {
+    "koa": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "nodemon": "^1.14.11",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2"
+  }
+}
