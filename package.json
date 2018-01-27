@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run server:live",
-    "crawl": "ts-node server/crawler/tail-list.ts",
+    "crawl": "ts-node server/crawler/trailer-list.ts",
     "server:live": "nodemon --exec ./node_modules/.bin/ts-node -- server/index.ts"
   },
   "dependencies": {

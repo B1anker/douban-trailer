@@ -1,15 +1,6 @@
-// import puppeteer from 'puppeteer'
-const puppeteer = require('puppeteer')
-import { setTimeout } from 'timers';
+import * as puppeteer from 'puppeteer'
 
-
-const sleep = (duration) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, duration)
-  })
-}
+const sleep = (duration) => new Promise((resolve) => setTimeout(resolve, duration))
 
 ~(async function () {
   console.log('launch')
@@ -22,7 +13,7 @@ const sleep = (duration) => {
   await sleep(3000)
   await page.waitForSelector('.more')
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 1; i++) {
     await sleep(3000)
     await page.click('.more')
   }
@@ -42,5 +33,7 @@ const sleep = (duration) => {
     })
   })
   browser.close()
-  console.log(result)
+  
+  process.send({result})
+  process.exit(0)
 })()
