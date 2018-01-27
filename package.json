@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run server:live",
+    "crawl": "ts-node server/crawler/tail-list.ts",
     "server:live": "nodemon --exec ./node_modules/.bin/ts-node -- server/index.ts"
   },
   "dependencies": {
-    "koa": "^2.4.1"
+    "koa": "^2.4.1",
+    "puppeteer": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^9.4.0",
