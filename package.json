@@ -7,17 +7,28 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run server:live",
-    "crawl": "ts-node server/crawler/trailer-list.ts",
+    "crawl:list": "ts-node server/tasks/trailer-list.ts",
+    "crawl:item": "ts-node server/tasks/movie.ts",
+    "upload": "ts-node server/tasks/qiniu.ts",
     "server:live": "nodemon --exec ./node_modules/.bin/ts-node -- server/index.ts"
   },
   "dependencies": {
+    "flyio": "^0.3.1",
+    "global": "^4.3.2",
     "koa": "^2.4.1",
     "puppeteer": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^9.4.0",
+    "nanoid": "^1.0.2",
     "nodemon": "^1.14.11",
+    "prettier": "^1.11.0",
+    "prettier-tslint": "^0.3.0",
+    "qiniu": "^7.1.2",
     "ts-node": "^4.1.0",
-    "typescript": "^2.6.2"
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.9.0",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.7.2"
   }
 }

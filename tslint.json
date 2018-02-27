@@ -1,7 +1,6 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:latest", "tslint-react"],
-  "jsRules": {},
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "space-before-function-paren": true,
     "no-console": false,
@@ -16,7 +15,8 @@
     "max-line-length": false,
     "jsx-alignment": false,
     "no-this-assignment": false,
-    "only-arrow-functions": false
+    "only-arrow-functions": false,
+    "no-reference": true
   },
   "rulesDirectory": []
 }

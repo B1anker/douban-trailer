@@ -1,9 +1,8 @@
 import * as puppeteer from 'puppeteer'
+import { sleep } from '../utils/common'
 
-const sleep = (duration) => new Promise((resolve) => setTimeout(resolve, duration))
-
-~(async function () {
-  console.log('launch')
+const run = async () => {
+  console.log('launch trailer-list')
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   const url = `https://movie.douban.com/tag/#/?sort=R&range=6,10&tags=`
@@ -36,4 +35,6 @@ const sleep = (duration) => new Promise((resolve) => setTimeout(resolve, duratio
   
   process.send({result})
   process.exit(0)
-})()
+}
+
+run()
