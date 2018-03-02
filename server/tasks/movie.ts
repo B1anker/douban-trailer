@@ -1,4 +1,5 @@
-import * as cp from 'child_process'
+import cp = require('child_process')
+import mongoose = require('mongoose')
 import { resolve } from 'path'
 
 const run = async () => {

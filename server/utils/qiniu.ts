@@ -34,6 +34,12 @@ export default class Qiniu {
     this.setUploadToken()
   }
 
+
+  /**
+   * 上传文件
+   * @param {String} [url] [文件路径]
+   * @param {String} [format] [文件格式]
+   */
   public uploadFile (url: string, format: string) {
     const filename = nanoid() + '.' + format
     return new Promise((resolve, reject) => {
@@ -251,12 +257,16 @@ export default class Qiniu {
         }
       })
     })
-  }
+  }  
 
-  public printList (body) {
-    console.log(`nextMarker: ${body.nextMarker || null}`)
-    console.log(`commonPrefixes: ${body.commonPrefixes || null}`)
-    body.items.forEach((item) => {
+  /**
+   * 打印list查询到的结果
+   * @param {Object} [data] [数据]
+   */
+  public printList (data) {
+    console.log(`nextMarker: ${data.nextMarker || null}`)
+    console.log(`commonPrefixes: ${data.commonPrefixes || null}`)
+    data.items.forEach((item) => {
       console.log(
         item.key +
           '\t' +
@@ -273,6 +283,10 @@ export default class Qiniu {
     })
   }
 
+  /**
+   * 打印info查询到的结果
+   * @param {Array} [items] [数据]
+   */
   public printInfo (items) {
     items.forEach(function (item) {
       if (item.code === 200) {
@@ -293,6 +307,9 @@ export default class Qiniu {
     })
   }
 
+  /**
+   * 设置上传token
+   */
   private setUploadToken (options: qiniu.rs.PutPolicyOptions = {}) {
     options = { ...{ scope: this.bucket }, ...options }
     this.putPolicy = new qiniu.rs.PutPolicy(options)

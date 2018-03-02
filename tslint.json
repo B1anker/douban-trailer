@@ -1,10 +1,10 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
     "space-before-function-paren": true,
     "no-console": false,
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [true, "single"],
     "semicolon": [true, "never"],
     "interface-name": [true, "never-prefix"],
     "object-literal-sort-keys": false,
@@ -16,7 +16,14 @@
     "jsx-alignment": false,
     "no-this-assignment": false,
     "only-arrow-functions": false,
-    "no-reference": true
+    "no-reference": true,
+    "no-var-requires": false,
+    "no-shadowed-variable": false,
+    "no-angle-bracket-type-assertion": false,
+    "no-unused-expression": false,
+    "no-empty": false,
+    "jsx-curly-spacing": false,
+    "arrow-parens": false
   },
   "rulesDirectory": []
 }

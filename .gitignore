@@ -59,3 +59,6 @@ typings/
 
 # key
 server/config/qiniu.ts
+
+.cache
+dist

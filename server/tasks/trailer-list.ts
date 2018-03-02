@@ -1,5 +1,8 @@
-import * as cp from 'child_process'
+import cp = require('child_process')
+import mongoose = require('mongoose')
 import { resolve } from 'path'
+
+const Movie = mongoose.model('Movie')
 
 const run = async () => {
   const script = resolve(__dirname, '../crawler/trailer-list')
@@ -27,7 +30,15 @@ const run = async () => {
 
   child.on('message', (data) => {
     const result = data.result
-    console.log(result)
+    result.forEach(async (item) => {
+      let movie = await Movie.findOne({
+        doubanId: item.doubanId
+      })
+      if (!movie) {
+        movie = new Movie(item)
+        await movie.save()
+      }
+    })
   })
 }
 

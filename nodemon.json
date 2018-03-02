@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "watch": [
+    "server",
+    "client",
+    "tsconfig.json"
+  ],
+  "ext": "ts tsx json"
+}
